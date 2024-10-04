@@ -3,34 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Steven R. Danner</title>
-    <!-- Material Design Icons and CSS -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Steven R Danner</title>
+    <!-- Materialize CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-        main {
-            flex: 1 0 auto;
-        }
-        .section {
-            padding-top: 0;
-        }
-        .profile-pic {
-            border-radius: 50%;
-            width: 96px;
-            height: 96px;
-            position: absolute;
-            top: 15px;
-            right: 15px;
-        }
-        .nav-wrapper {
-            position: relative;
-        }
-    </style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #ffffff;
+          transition: background-color 0.3s;
+      }
+  
+      body.dark-mode {
+          background-color: #121212;
+          color: #ffffff;
+      }
+  
+      .profile-pic {
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          top: 0;
+          right: 0;
+      }
+  
+      .horizontal-toggle {
+          display: flex;
+          align-items: center;
+      }
+  
+      .horizontal-toggle .material-icons {
+          vertical-align: middle;
+          padding: 0 10px;
+          color: white;
+      }
+  
+      /* Job experience styling */
+      .collapsible-header {
+          font-weight: bold;
+          color: black; /* Always set text color to black */
+      }
+
+      .page-footer {
+        background-color: inherit; /* Ensure footer background matches the main body background */
+        border-top: none; /* Remove any top border */
+        margin-bottom: -20px;
+        padding-bottom: 5px;
+      }
+  
+      /* Adjust for smaller screens if necessary */
+      @media screen and (max-width: 600px) {
+          .horizontal-toggle .material-icons {
+              padding: 0 5px;
+          }
+      }
+  </style>  
 </head>
 <body>
     <header>
@@ -38,133 +67,164 @@
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">Steven R. Danner</a>
                 <img src="https://lh3.googleusercontent.com/a/ACg8ocIJqLDtvyzdOODL4iVltwpSip-C8_6DgvUz5sw_fjBmMqxhsEGj=s96-c-rg-br100" alt="Profile Picture" class="profile-pic">
+                <ul class="right" style="margin-right: 70px;">
+                    <li>
+                        <div class="horizontal-toggle">
+                            <i class="material-icons">wb_sunny</i>
+                            <div class="switch">
+                                <label>
+                                    <input id="theme-toggle" type="checkbox">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                            <i class="material-icons">brightness_2</i>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <div class="container">
-            <!-- Contact Information -->
-            <div class="section">
-                <h5>Contact Information</h5>
-                <p><strong>Address:</strong> 16701 Cherry Hollow Ct, Wildwood, MO 63040</p>
-                <p><strong>Email:</strong> <a href="mailto:steven.danner@gmail.com">steven.danner@gmail.com</a></p>
-                <p><strong>Phone:</strong> (636) 751-1734</p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/steve-danner-59b9875/">linkedin.com/in/steve-danner-59b9875</a></p>
-            </div>
+    <main class="container">
+        <div class="section">
+            <h5>Contact Information</h5>
+            <p>16701 Cherry Hollow Ct.<br>Wildwood, MO 63040</p>
+            <p>Email: <a href="mailto:steven.danner@gmail.com">steven.danner@gmail.com</a></p>
+            <p>Phone: <a href="tel:6367511734">(636) 751-1734</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/steve-danner-59b9875/">https://www.linkedin.com/in/steve-danner-59b9875</a></p>
+            <p>Github: <a href="https://github.com/srd8580">https://github.com/srd8580</a></p>
+            <p>StackOverflow: <a href="https://stackoverflow.com/users/233810/steve-danner">https://stackoverflow.com/users/233810/steve-danner</a></p>
+            <p>References available upon request.</p>
+        </div>
 
-            <!-- Summary -->
-            <div class="section">
-                <h5>Summary</h5>
-                <p>Self-motivated, task-driven software engineer lead with a passion for continuously expanding knowledge of software development, technology, and leadership. 21+ years of experience in .NET, HTML, JavaScript, and Azure development, design patterns, Agile methodologies, and customer service.</p>
-            </div>
+        <div class="section">
+            <h5>Summary</h5>
+            <p>Self-motivated, task-driven software engineer lead with a passion for continuously expanding knowledge of software development, technology and leadership. Strong design and architectural skills combined with experience leading teams throughout the entire Application Development Lifecycle. Interested in pursuing a technical or technical leadership position that utilizes my 21+ years of experience in on-the-job training in .NET, HTML, JavaScript, and Azure development; design patterns, Agile and SCRUM methodologies, and customer service.</p>
+        </div>
 
-            <!-- Education -->
-            <div class="section">
-                <h5>Education</h5>
-                <p><strong>University of Missouri – St. Louis</strong></p>
-                <p>Bachelor of Science in Computer Science + Minor in Mathematics (May, 2004)</p>
-            </div>
+        <div class="section">
+            <h5>Education</h5>
+            <p>University of Missouri – St. Louis<br>Bachelor of Science in Computer Science + Minor in Mathematics (May, 2004)</p>
+        </div>
 
-            <!-- Skills -->
-            <div class="section">
-                <h5>Primary Skills</h5>
-                <ul class="collection">
-                    <li class="collection-item"><strong>Languages:</strong> C#, HTML, JavaScript/TypeScript, (S)CSS, Java, SQL, PowerShell, PHP</li>
-                    <li class="collection-item"><strong>Tools & Frameworks:</strong> Microsoft Azure, AWS, Kibana, Apache Kafka, ASP.NET, Angular, PowerShell, Vue, React, Git, jQuery</li>
-                    <li class="collection-item"><strong>Platforms:</strong> Microsoft Azure, AWS, SharePoint, Android, Salesforce</li>
-                </ul>
-            </div>
-
-            <!-- Awards & Certifications -->
-            <div class="section">
-                <h5>Awards & Certifications</h5>
-                <ul class="collection">
-                    <li class="collection-item">Microsoft Certified Solutions Associate (MCSA): Azure Cloud Platform – Dec 2018</li>
-                    <li class="collection-item">Salesforce Certified Platform Developer I – Feb 2017</li>
-                    <li class="collection-item">Impact Award – 2012, KnowledgeLake, Inc.</li>
-                    <li class="collection-item">Microsoft Certified Application Developer (MCAD) – Mar 2005</li>
-                    <li class="collection-item">Employee of the Year – 2005, KnowledgeLake, Inc.</li>
-                </ul>
-            </div>
-
-            <!-- Job Experience -->
-            <div class="section">
-                <h5>Job Experience</h5>
-
-                <div class="job-experience">
-                    <h6>DriveCentric, Inc - Fenton, MO (March 2022 – Present)</h6>
-                    <p><strong>Senior Software Engineer/Team Lead</strong></p>
-                    <ul>
-                        <li>Led team and architecture for several net new projects, including a data mining application.</li>
-                        <li>Worked closely with DevOps team to maintain CI/CD pipelines for applications.</li>
-                        <li>Tech stack: .NET Core/.NET 6, Angular, AWS ECS, MS SQL Server, Postgres SQL.</li>
-                    </ul>
-
-                    <h6>Software Design Partners, LLC - Chesterfield, MO (July 2014 – March 2022)</h6>
-                    <p><strong>Director of Technology</strong> (April 2018 – March 2022)</p>
-                    <ul>
-                        <li>Led technology direction and guided development processes and architecture.</li>
-                        <li>Assisted Sales as a Sales Engineer and provided architectural guidance on projects.</li>
-                        <li>Led a team of 4 engineers and managed project schedules, reviews, and client expectations.</li>
-                    </ul>
-
-                    <p><strong>Senior Software Engineer</strong> (July 2014 – April 2018)</p>
-                    <ul>
-                        <li>Led architecture and development for several projects using Microsoft technology stack.</li>
-                        <li>Migrated systems to Azure-based Virtual Machines and BitBucket (Git).</li>
-                        <li>Managed several technology migrations, including moving to Office 365 and AzureAD.</li>
-                    </ul>
-
-                    <h6>KnowledgeLake, Inc – St. Louis, MO (Nov 2009 – June 2014)</h6>
-                    <p><strong>Engineering Team Lead/Principal Engineer</strong> (Feb 2011 – June 2014)</p>
-                    <ul>
-                        <li>Managed teams for feature and maintenance releases of product set.</li>
-                        <li>Led architecture and design for mobile search apps using Apache Cordova and WinJS.</li>
-                        <li>Led initial design of rewriting the KnowledgeLake Capture Server suite.</li>
-                    </ul>
-
-                    <p><strong>Senior .NET Engineer</strong> (Nov 2009 – Feb 2011)</p>
-                    <ul>
-                        <li>Worked on the KnowledgeLake Imaging for SharePoint 2010 product.</li>
-                        <li>Rebuilt KnowledgeLake Imaging from the ground up for SharePoint 2010.</li>
-                    </ul>
-
-                    <h6>Cass Information Systems – St. Louis, MO (Dec 2008 – Oct 2009)</h6>
-                    <p><strong>Internet Architect</strong></p>
-                    <ul>
-                        <li>Rewrote legacy VB6/ASP report-parsing applications using C#/.NET 3.5 and other technologies.</li>
-                    </ul>
-
-                    <h6>Ferguson Consulting – St. Louis, MO (July 2007 – Dec 2008)</h6>
-                    <p><strong>Consultant, Anheuser-Busch Companies</strong></p>
-                    <ul>
-                        <li>Developed web applications for advertising contracts across various media platforms.</li>
-                    </ul>
-
-                    <h6>KnowledgeLake, Inc – St. Louis, MO (March 2003 – June 2007)</h6>
-                    <p><strong>Software Developer/Consultant</strong></p>
-                    <ul>
-                        <li>Created client-side components for Windows SharePoint Services.</li>
-                        <li>Led architecture and development for porting VB6 software to VB.NET 2.0 and C#.</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="section">
+            <h5>Job Experience</h5>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header">DriveCentric, Inc - Fenton, MO (March 2022 – Present)</div>
+                    <div class="collapsible-body">
+                        <p><strong>Senior Software Engineer/Team Lead</strong></p>
+                        <ul>
+                            <li>Led team and architecture for several net new projects including a data mining application installed on clients’ websites. This included an Angular Material-based dashboard UI utilizing HighCharts to analyze website traffic.</li>
+                            <li>Led offshore team to successful completion of a realtime messaging application after several misfires before I stepped into role.</li>
+                            <li>Led team of 5 building several replacement modules for existing SaaS application.</li>
+                            <li>Worked closely with DevOps team to create and maintain CI/CD pipelines for our owned applications from Github to AWS.</li>
+                            <li>Tech stack included .NET Core/.NET 6, Angular, AWS ECS, AWS S3 + CloudFront, MS SQL Server, and Postgres SQL.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Software Design Partners, LLC - Chesterfield, MO (July 2014 – March 2022)</div>
+                    <div class="collapsible-body">
+                        <p><strong>Director of Technology</strong></p>
+                        <ul>
+                            <li>Responsible for leading technology direction of the company including guiding overall software development processes, selection of software frameworks, and preferred application architecture.</li>
+                            <li>Assisted Sales as a Sales Engineer, providing technical insight and potential solutions to prospective clients.</li>
+                            <li>Worked on several projects in an architecture capacity while training and leading teammates to take over further development.</li>
+                            <li>Worked on other from start to finish in a senior engineer capacity, providing architectural guidance, as well as implementing features and stories.</li>
+                            <li>Led team of 4 engineers, managing schedules, performance reviews, and daily tasks.</li>
+                            <li>Occasionally responsible for project management duties including updating client stakeholders, providing status reports, and managing client expectations.</li>
+                            <li>Responsible for managing the Software Design Partners internal network and software services.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">KnowledgeLake, Inc – St. Louis, MO (Nov 2009 – June 2014)</div>
+                    <div class="collapsible-body">
+                        <p><strong>Engineering Team Lead/Principal Engineer</strong></p>
+                        <ul>
+                            <li>Managed teams of 3-5 to orchestrate several feature and maintenance releases of product set.</li>
+                            <li>Led architecture and design of Windows Store/WinJS SharePoint Search application reusing most of the codebase from the Telerik AppBuilder mobile application.</li>
+                            <li>Led architecture and design of Apache Cordova/Telerik AppBuilder hybrid mobile search application for iOS and Android. Application used Cordova APIs along with Telerik Kendo Mobile tools to search Microsoft SharePoint with KnowledgeLake’s backend web services.</li>
+                            <li>Lead architecture and design of mobile search Windows 8 Store application. Application used WinJS along with existing JavaScript code from Cordova application to search Microsoft SharePoint with KnowledgeLake’s backend web services.</li>
+                            <li>Lead initial design of rewriting Windows Forms/WPF application suite for KnowledgeLake Capture Server in HTML5/Javascript with an ASP.NET MVC Web API back-end.</li>
+                            <li>Successfully rewrote parts of both applications using WPF and Model-View-ViewModel (MVVM) style architecture.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Cass Information Systems – St. Louis, MO (Dec 2008 – Oct 2009)</div>
+                    <div class="collapsible-body">
+                        <p><strong>Internet Architect</strong></p>
+                        <ul>
+                            <li>Rewrote legacy VB6/ASP report-parsing applications using C#/.NET 3.5 and other technologies.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Ferguson Consulting – St. Louis, MO (July 2007 – Dec 2008)</div>
+                    <div class="collapsible-body">
+                        <p><strong>Consultant, Anheuser-Busch Companies</strong></p>
+                        <ul>
+                            <li>Developed web applications for advertising contracts across various media platforms.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">KnowledgeLake, Inc – St. Louis, MO (March 2003 – June 2007)</div>
+                    <div class="collapsible-body">
+                        <p><strong>Software Developer/Consultant</strong></p>
+                        <ul>
+                            <li>Created client-side components for Windows SharePoint Services using the SharePoint web services version 2.0 and 3.0.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
         </div>
     </main>
 
     <footer class="page-footer blue darken-3">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">References</h5>
-                    <p class="grey-text text-lighten-4">Available upon request.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+      <div class="container">
+          <div class="row">
+              <div class="col l6 s12">
+                  <h5 class="white-text"><a href="mailto:steven.danner@gmail.com" class="grey-text text-lighten-4">Contact Me</a></h5>
+              </div>
+          </div>          
+      </div>
+  </footer>
+  
 
-    <!-- Materialize JS -->
+    <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Initialize collapsible elements
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems, {
+                accordion: false
+            });
+
+            // Expand all collapsible sections by default
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            collapsibleHeaders.forEach(header => {
+                header.click(); // Simulate click to expand each section
+            });
+        });
+
+        // Toggle dark mode based on the user's browser preference
+        const themeToggle = document.getElementById('theme-toggle');
+
+        // Check for user's preference and set the theme
+        const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (userPrefersDark) {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.checked = true; // Set toggle to checked if dark mode is preferred
+        }
+
+        // Toggle dark mode on switch change
+        themeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
 </html>
