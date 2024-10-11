@@ -4,245 +4,281 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven R Danner</title>
-    <!-- Materialize CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      body {
-          font-family: Arial, sans-serif;
-          background-color: #ffffff;
-          transition: background-color 0.3s;
-      }
-  
-      body.dark-mode {
-          background-color: #494949;
-          color: #ffffff;
-      }
-      .brand-logo {
-        left: 50%!important;
-      }
-  
-      .profile-pic {
-          border-radius: 50%;
-          width: 60px;
-          height: 60px;
-          position: absolute;
-          top: 0;
-          right: 0;
-      }
-  
-      .horizontal-toggle {
-          display: flex;
-          align-items: center;
-      }
-  
-      .horizontal-toggle .material-icons {
-          vertical-align: middle;
-          padding: 0 10px;
-          color: white;
-      }
-  
-      /* Job experience styling */
-      .collapsible-header {
-          font-weight: bold;
-          color: #494949; /* Always set text color to black */
-      }
+        :root {
+            --text-color: #333;
+            --bg-color: #f5f5f7;
+            --card-bg: #fff;
+            --accent-color: #0071e3;
+        }
 
-      .page-footer {
-        background-color: inherit; /* Ensure footer background matches the main body background */
-        border-top: none; /* Remove any top border */
-        margin-bottom: -20px;
-        padding-bottom: 5px;
-      }
-      .material-icons {
-        padding: 0!important;
-      }
-      .achievement-list > li {
-        list-style-type: disc!important;
-      }
-  
-      /* Adjust for smaller screens if necessary */
-      @media screen and (max-width: 600px) {
-          .horizontal-toggle .material-icons {
-              padding: 0 5px;
-          }
-          .brand-logo {
-            font-size: 20px!important;
-          }
-          .lever {
-            margin: 0!important;
-          }
-          .profile-pic {
-            width: 54px;
-            height: 54px;
-          }
-      }
-  </style>  
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+
+        main {
+            margin-top: 40px;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+            .contact-info a {
+                color: var(--accent-color);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+            }
+
+                .contact-info a i {
+                    margin-right: 10px;
+                }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+            .skill i {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+
+        .experience-item {
+            margin-bottom: 30px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .company {
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        .date {
+            color: #666;
+        }
+
+        .dark-mode {
+            --text-color: #f5f5f7;
+            --bg-color: #1a1a1a;
+            --card-bg: #2c2c2e;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info {
+                margin-bottom: 20px;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="blue darken-3">
-            <div class="nav-wrapper container">
-                <a href="#" class="brand-logo">Steven R. Danner</a>
+        <div class="container header-content">
+            <div class="profile-info">
                 <img src="https://lh3.googleusercontent.com/a/ACg8ocIJqLDtvyzdOODL4iVltwpSip-C8_6DgvUz5sw_fjBmMqxhsEGj=s96-c-rg-br100" alt="Profile Picture" class="profile-pic">
-                <ul class="left">
-                    <li>
-                        <div class="horizontal-toggle">
-                            <i class="material-icons">wb_sunny</i>
-                            <div class="switch">
-                                <label>
-                                    <input id="theme-toggle" type="checkbox">
-                                    <span class="lever"></span>
-                                </label>
-                            </div>
-                            <i class="material-icons">brightness_2</i>
-                        </div>
-                    </li>
-                </ul>
+                <h1>Steven R. Danner</h1>
             </div>
-        </nav>
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
     </header>
 
     <main class="container">
-        <div class="section">
-            <h5>Contact</h5>
-            <ul>
-                <li>Email: <a href="mailto:steven.danner@gmail.com">steven.danner@gmail.com</a></li>
-                <li>Phone: <a href="tel:6367511734">(636) 751-1734</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/steve-danner-59b9875/">https://www.linkedin.com/in/steve-danner-59b9875</a></li>
-                <li>Github: <a href="https://github.com/srd8580">https://github.com/srd8580</a></li>
-                <li>StackOverflow: <a href="https://stackoverflow.com/users/233810/steve-danner">https://stackoverflow.com/users/233810/steve-danner</a></li>
-            </ul>            
-        </div>
+        <section>
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <a href="mailto:steven.danner@gmail.com"><i class="fas fa-envelope"></i>steven.danner@gmail.com</a>
+                <a href="tel:6367511734"><i class="fas fa-phone"></i>(636) 751-1734</a>
+                <a href="https://www.linkedin.com/in/steve-danner-59b9875/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                <a href="https://github.com/srd8580" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+                <a href="https://stackoverflow.com/users/233810/steve-danner" target="_blank"><i class="fab fa-stack-overflow"></i>Stack Overflow</a>
+                <p><i class="fas fa-map-marker-alt"></i>16701 Cherry Hollow Ct., Wildwood, MO 63040</p>
+            </div>
+        </section>
 
-        <div class="section">
-            <h5>Summary</h5>
+        <section>
+            <h2>Summary</h2>
             <p>Self-motivated, task-driven software engineer lead with a passion for continuously expanding knowledge of software development, technology and leadership. Strong design and architectural skills combined with experience leading teams throughout the entire Application Development Lifecycle. Interested in pursuing a technical or technical leadership position that utilizes my 21+ years of experience in on-the-job training in .NET, HTML, JavaScript, and Azure development; design patterns, Agile and SCRUM methodologies, and customer service.</p>
-        </div>
+        </section>
 
-        <div class="section">
-            <h5>Education</h5>
-            <p>University of Missouri – St. Louis<br>Bachelor of Science in Computer Science + Minor in Mathematics (May, 2004)</p>
-        </div>
+        <section>
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill"><i class="fab fa-cuttlefish"></i>C#</div>
+                <div class="skill"><i class="fab fa-aws"></i>AWS</div>
+                <div class="skill"><i class="fab fa-js"></i>JavaScript</div>
+                <div class="skill"><i class="fab fa-js-square"></i>TypeScript</div>
+                <div class="skill"><i class="fab fa-angular"></i>Angular</div>
+                <div class="skill"><i class="fab fa-react"></i>React</div>
+                <div class="skill"><i class="fab fa-html5"></i>HTML5</div>
+                <div class="skill"><i class="fab fa-css3-alt"></i>CSS3</div>
+                <div class="skill"><i class="fab fa-microsoft"></i>.NET</div>
+                <div class="skill"><i class="fab fa-docker"></i>Docker</div>
+                <div class="skill"><i class="fas fa-database"></i>SQL</div>
+                <div class="skill"><i class="fab fa-git-alt"></i>Git</div>
+                <div class="skill"><i class="fab fa-node-js"></i>Node.js</div>
+                <div class="skill"><i class="fas fa-cloud"></i>Azure</div>
+            </div>
+        </section>
 
-        <div class="section">
-            <h5>Job Experience</h5>
-            <ul class="collapsible" data-collapsible="accordion">
-                <li>
-                    <div class="collapsible-header">DriveCentric, Inc - Fenton, MO (March 2022 – Present)</div>
-                    <div class="collapsible-body">
-                        <h6>Senior Software Engineer/Team Lead</h6>
-                        <ul class="achievement-list">
-                            <li>Led team and architecture for several net new projects including a data mining application installed on clients’ websites. This included an Angular Material-based dashboard UI utilizing HighCharts to analyze website traffic.</li>
-                            <li>Led offshore team to successful completion of a realtime messaging application after several misfires before I stepped into role.</li>
-                            <li>Led team of 5 building several replacement modules for existing SaaS application.</li>
-                            <li>Worked closely with DevOps team to create and maintain CI/CD pipelines for our owned applications from Github to AWS.</li>
-                            <li>Tech stack included .NET Core/.NET 6, Angular, AWS ECS, AWS S3 + CloudFront, MS SQL Server, and Postgres SQL.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header">Software Design Partners, LLC - Chesterfield, MO (July 2014 – March 2022)</div>
-                    <div class="collapsible-body">
-                        <h6>Director of Technology</h6>
-                        <ul class="achievement-list">
-                            <li>Responsible for leading technology direction of the company including guiding overall software development processes, selection of software frameworks, and preferred application architecture.</li>
-                            <li>Assisted Sales as a Sales Engineer, providing technical insight and potential solutions to prospective clients.</li>
-                            <li>Worked on several projects in an architecture capacity while training and leading teammates to take over further development.</li>
-                            <li>Worked on other from start to finish in a senior engineer capacity, providing architectural guidance, as well as implementing features and stories.</li>
-                            <li>Led team of 4 engineers, managing schedules, performance reviews, and daily tasks.</li>
-                            <li>Occasionally responsible for project management duties including updating client stakeholders, providing status reports, and managing client expectations.</li>
-                            <li>Responsible for managing the Software Design Partners internal network and software services.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header">KnowledgeLake, Inc – St. Louis, MO (Nov 2009 – June 2014)</div>
-                    <div class="collapsible-body">
-                        <h6>Engineering Team Lead/Principal Engineer</h6>
-                        <ul class="achievement-list">
-                            <li>Managed teams of 3-5 to orchestrate several feature and maintenance releases of product set.</li>
-                            <li>Led architecture and design of Windows Store/WinJS SharePoint Search application reusing most of the codebase from the Telerik AppBuilder mobile application.</li>
-                            <li>Led architecture and design of Apache Cordova/Telerik AppBuilder hybrid mobile search application for iOS and Android. Application used Cordova APIs along with Telerik Kendo Mobile tools to search Microsoft SharePoint with KnowledgeLake’s backend web services.</li>
-                            <li>Lead architecture and design of mobile search Windows 8 Store application. Application used WinJS along with existing JavaScript code from Cordova application to search Microsoft SharePoint with KnowledgeLake’s backend web services.</li>
-                            <li>Lead initial design of rewriting Windows Forms/WPF application suite for KnowledgeLake Capture Server in HTML5/Javascript with an ASP.NET MVC Web API back-end.</li>
-                            <li>Successfully rewrote parts of both applications using WPF and Model-View-ViewModel (MVVM) style architecture.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header">Cass Information Systems – St. Louis, MO (Dec 2008 – Oct 2009)</div>
-                    <div class="collapsible-body">
-                        <h6>Internet Architect</h6>
-                        <ul class="achievement-list">
-                            <li>Rewrote legacy VB6/ASP report-parsing applications using C#/.NET 3.5 and other technologies.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header">Ferguson Consulting – St. Louis, MO (July 2007 – Dec 2008)</div>
-                    <div class="collapsible-body">
-                        <h6>Consultant, Anheuser-Busch Companies</h6>
-                        <ul class="achievement-list">
-                            <li>Developed web applications for advertising contracts across various media platforms.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header">KnowledgeLake, Inc – St. Louis, MO (March 2003 – June 2007)</div>
-                    <div class="collapsible-body">
-                        <h6>Software Developer/Consultant</h6>
-                        <ul class="achievement-list">
-                            <li>Created client-side components for Windows SharePoint Services using the SharePoint web services version 2.0 and 3.0.</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <section>
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="company">DriveCentric, Inc - Fenton, MO</span>
+                    <span class="date">March 2022 � Present</span>
+                </div>
+                <strong>Senior Software Engineer/Team Lead</strong>
+                <ul>
+                    <li>Led team and architecture for several net new projects including a data mining application installed on clients' websites. This included an Angular Material-based dashboard UI utilizing HighCharts to analyze website traffic.</li>
+                    <li>Led offshore team to successful completion of a realtime messaging application after several misfires before I stepped into role.</li>
+                    <li>Led team of 5 building several replacement modules for existing SaaS application.</li>
+                    <li>Worked closely with DevOps team to create and maintain CI/CD pipelines for our owned applications from Github to AWS.</li>
+                    <li>Tech stack included .NET Core/.NET 6, Angular, AWS ECS, AWS S3 + CloudFront, MS SQL Server, and Postgres SQL.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="company">Software Design Partners, LLC - Chesterfield, MO</span>
+                    <span class="date">July 2014 � March 2022</span>
+                </div>
+                <strong>Director of Technology</strong>
+                <ul>
+                    <li>Responsible for leading technology direction of the company including guiding overall software development processes, selection of software frameworks, and preferred application architecture.</li>
+                    <li>Assisted Sales as a Sales Engineer, providing technical insight and potential solutions to prospective clients.</li>
+                    <li>Worked on several projects in an architecture capacity while training and leading teammates to take over further development.</li>
+                    <li>Worked on other from start to finish in a senior engineer capacity, providing architectural guidance, as well as implementing features and stories.</li>
+                    <li>Led team of 4 engineers, managing schedules, performance reviews, and daily tasks.</li>
+                    <li>Occasionally responsible for project management duties including updating client stakeholders, providing status reports, and managing client expectations.</li>
+                    <li>Responsible for managing the Software Design Partners internal network and software services.</li>
+                </ul>
+            </div>
+            <!-- Add more experience items as needed -->
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <p>
+                <strong>University of Missouri � St. Louis</strong><br>
+                Bachelor of Science in Computer Science + Minor in Mathematics (May, 2004)
+            </p>
+        </section>
     </main>
 
-    <footer class="page-footer blue darken-3">
-      <div class="container">
-          <div class="row">
-              <div class="col l6 s12">
-                  <h5 class="white-text"><a href="mailto:steven.danner@gmail.com" class="grey-text text-lighten-4">Contact Me</a></h5>
-              </div>
-          </div>          
-      </div>
-  </footer>
-  
-
-    <!-- Materialize JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        // Initialize collapsible elements
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.collapsible');
-            var instances = M.Collapsible.init(elems, {
-                accordion: false
-            });
-
-            // Expand all collapsible sections by default
-            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
-            collapsibleHeaders.forEach(header => {
-                header.click(); // Simulate click to expand each section
-            });
-        });
-
-        // Toggle dark mode based on the user's browser preference
         const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
 
-        // Check for user's preference and set the theme
-        const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (userPrefersDark) {
-            document.body.classList.toggle('dark-mode');
-            themeToggle.checked = true; // Set toggle to checked if dark mode is preferred
+        function setTheme(isDark) {
+            body.classList.toggle('dark-mode', isDark);
+            icon.classList.toggle('fa-moon', !isDark);
+            icon.classList.toggle('fa-sun', isDark);
+            localStorage.setItem('dark-mode', isDark);
         }
 
-        // Toggle dark mode on switch change
-        themeToggle.addEventListener('change', () => {
-            document.body.classList.toggle('dark-mode');
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('dark-mode');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(savedTheme ? savedTheme === 'true' : systemPrefersDark);
+
+        themeToggle.addEventListener('click', () => {
+            setTheme(!body.classList.contains('dark-mode'));
         });
     </script>
 </body>
