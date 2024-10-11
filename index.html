@@ -19,6 +19,9 @@
           background-color: #494949;
           color: #ffffff;
       }
+      .brand-logo {
+        left: 50%!important;
+      }
   
       .profile-pic {
           border-radius: 50%;
@@ -52,11 +55,27 @@
         margin-bottom: -20px;
         padding-bottom: 5px;
       }
+      .material-icons {
+        padding: 0!important;
+      }
+      .achievement-list > li {
+        list-style-type: disc!important;
+      }
   
       /* Adjust for smaller screens if necessary */
       @media screen and (max-width: 600px) {
           .horizontal-toggle .material-icons {
               padding: 0 5px;
+          }
+          .brand-logo {
+            font-size: 20px!important;
+          }
+          .lever {
+            margin: 0!important;
+          }
+          .profile-pic {
+            width: 54px;
+            height: 54px;
           }
       }
   </style>  
@@ -67,7 +86,7 @@
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">Steven R. Danner</a>
                 <img src="https://lh3.googleusercontent.com/a/ACg8ocIJqLDtvyzdOODL4iVltwpSip-C8_6DgvUz5sw_fjBmMqxhsEGj=s96-c-rg-br100" alt="Profile Picture" class="profile-pic">
-                <ul class="right" style="margin-right: 70px;">
+                <ul class="left">
                     <li>
                         <div class="horizontal-toggle">
                             <i class="material-icons">wb_sunny</i>
@@ -87,8 +106,7 @@
 
     <main class="container">
         <div class="section">
-            <h5>Contact Information</h5>
-            <p>16701 Cherry Hollow Ct.<br>Wildwood, MO 63040</p>
+            <h5>Contact</h5>
             <ul>
                 <li>Email: <a href="mailto:steven.danner@gmail.com">steven.danner@gmail.com</a></li>
                 <li>Phone: <a href="tel:6367511734">(636) 751-1734</a></li>
@@ -114,8 +132,8 @@
                 <li>
                     <div class="collapsible-header">DriveCentric, Inc - Fenton, MO (March 2022 – Present)</div>
                     <div class="collapsible-body">
-                        <p><strong>Senior Software Engineer/Team Lead</strong></p>
-                        <ul>
+                        <h6>Senior Software Engineer/Team Lead</h6>
+                        <ul class="achievement-list">
                             <li>Led team and architecture for several net new projects including a data mining application installed on clients’ websites. This included an Angular Material-based dashboard UI utilizing HighCharts to analyze website traffic.</li>
                             <li>Led offshore team to successful completion of a realtime messaging application after several misfires before I stepped into role.</li>
                             <li>Led team of 5 building several replacement modules for existing SaaS application.</li>
@@ -127,8 +145,8 @@
                 <li>
                     <div class="collapsible-header">Software Design Partners, LLC - Chesterfield, MO (July 2014 – March 2022)</div>
                     <div class="collapsible-body">
-                        <p><strong>Director of Technology</strong></p>
-                        <ul>
+                        <h6>Director of Technology</h6>
+                        <ul class="achievement-list">
                             <li>Responsible for leading technology direction of the company including guiding overall software development processes, selection of software frameworks, and preferred application architecture.</li>
                             <li>Assisted Sales as a Sales Engineer, providing technical insight and potential solutions to prospective clients.</li>
                             <li>Worked on several projects in an architecture capacity while training and leading teammates to take over further development.</li>
@@ -142,8 +160,8 @@
                 <li>
                     <div class="collapsible-header">KnowledgeLake, Inc – St. Louis, MO (Nov 2009 – June 2014)</div>
                     <div class="collapsible-body">
-                        <p><strong>Engineering Team Lead/Principal Engineer</strong></p>
-                        <ul>
+                        <h6>Engineering Team Lead/Principal Engineer</h6>
+                        <ul class="achievement-list">
                             <li>Managed teams of 3-5 to orchestrate several feature and maintenance releases of product set.</li>
                             <li>Led architecture and design of Windows Store/WinJS SharePoint Search application reusing most of the codebase from the Telerik AppBuilder mobile application.</li>
                             <li>Led architecture and design of Apache Cordova/Telerik AppBuilder hybrid mobile search application for iOS and Android. Application used Cordova APIs along with Telerik Kendo Mobile tools to search Microsoft SharePoint with KnowledgeLake’s backend web services.</li>
@@ -156,8 +174,8 @@
                 <li>
                     <div class="collapsible-header">Cass Information Systems – St. Louis, MO (Dec 2008 – Oct 2009)</div>
                     <div class="collapsible-body">
-                        <p><strong>Internet Architect</strong></p>
-                        <ul>
+                        <h6>Internet Architect</h6>
+                        <ul class="achievement-list">
                             <li>Rewrote legacy VB6/ASP report-parsing applications using C#/.NET 3.5 and other technologies.</li>
                         </ul>
                     </div>
@@ -165,8 +183,8 @@
                 <li>
                     <div class="collapsible-header">Ferguson Consulting – St. Louis, MO (July 2007 – Dec 2008)</div>
                     <div class="collapsible-body">
-                        <p><strong>Consultant, Anheuser-Busch Companies</strong></p>
-                        <ul>
+                        <h6>Consultant, Anheuser-Busch Companies</h6>
+                        <ul class="achievement-list">
                             <li>Developed web applications for advertising contracts across various media platforms.</li>
                         </ul>
                     </div>
@@ -174,8 +192,8 @@
                 <li>
                     <div class="collapsible-header">KnowledgeLake, Inc – St. Louis, MO (March 2003 – June 2007)</div>
                     <div class="collapsible-body">
-                        <p><strong>Software Developer/Consultant</strong></p>
-                        <ul>
+                        <h6>Software Developer/Consultant</h6>
+                        <ul class="achievement-list">
                             <li>Created client-side components for Windows SharePoint Services using the SharePoint web services version 2.0 and 3.0.</li>
                         </ul>
                     </div>
