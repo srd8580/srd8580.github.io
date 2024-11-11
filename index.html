@@ -424,6 +424,21 @@
             localStorage.setItem('dark-mode', isDark);
         }
 
+        function getParamValues() {
+            let params = {};
+            let query = window.location.search;
+            let regex = /[?&;](.+?)=([^&;]+)/g;
+            let match;
+
+            if (query) {
+                while (match = regex.exec(query)) {
+                    params[match[1]] = decodeURIComponent(match[2]);
+                }
+            }   
+            
+            return params;
+        };
+
         const savedTheme = localStorage.getItem('dark-mode');
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         setTheme(savedTheme ? savedTheme === 'true' : systemPrefersDark);
@@ -454,6 +469,24 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+
+        const queryParms = getParamValues();
+
+        if (queryParms['showChat']) {
+            const iframe = document.createElement('iframe');
+            // 2. Set the iframe attributes
+            iframe.src = 'https://lemon-moss-06a96950f.5.azurestaticapps.net/'; // URL to load in the iframe
+            iframe.id = 'chatIFrame';
+            iframe.width = '450px';
+            iframe.height = '605px';
+            iframe.style.position = 'fixed';
+            iframe.style.right = '0px';
+            iframe.style.bottom = '0px';
+            iframe.style.borderRadius = '16px';
+
+            // 3. Append the iframe to the DOM
+            document.body.appendChild(iframe);
+        }
     </script>
 </body>
 </html>
